@@ -16,7 +16,6 @@ const signupBody=z.object({
 
 router.post("/signup",async(req,res)=>{   
 const body=req.body;
-console.log(body);
 const {success}=signupBody.safeParse(body);
 
 if(!success){
@@ -63,7 +62,7 @@ const signinBody=z.object({
 
 router.post("/signin",async(req,res)=>{
 const body=req.body;
-const {success}=signupBody.safeParse(body);
+const {success}=signinBody.safeParse(body);
 
 if(!success){
     return res.status(411).json({
